@@ -1,6 +1,6 @@
 name: ilogger
 description: Common interfaces that support building generic logging implementations
-version: 0.1.0
+version: 0.1.1
 repository: https://github.com/0xNF/dart_ilogger
 homepage: https://github.com/0xNF/dart_ilogger
 
