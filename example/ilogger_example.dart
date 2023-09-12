@@ -26,37 +26,64 @@ final class SampleLogger extends ILogger {
   bool isEnabled(LogLevel level) => true;
 
   @override
-  void debug(message, {Exception? exception, Map<String, dynamic>? eventProperties}) {
-    log(message, level: LogLevel.debug, exception: exception, eventProperties: eventProperties);
+  void debug(message,
+      {Exception? exception, Map<String, dynamic>? eventProperties}) {
+    log(message,
+        level: LogLevel.debug,
+        exception: exception,
+        eventProperties: eventProperties);
   }
 
   @override
-  void error(message, {Exception? exception, Map<String, dynamic>? eventProperties}) {
-    log(message, level: LogLevel.error, exception: exception, eventProperties: eventProperties);
+  void error(message,
+      {Exception? exception, Map<String, dynamic>? eventProperties}) {
+    log(message,
+        level: LogLevel.error,
+        exception: exception,
+        eventProperties: eventProperties);
   }
 
   @override
-  void fatal(message, {Exception? exception, Map<String, dynamic>? eventProperties}) {
-    log(message, level: LogLevel.fatal, exception: exception, eventProperties: eventProperties);
+  void fatal(message,
+      {Exception? exception, Map<String, dynamic>? eventProperties}) {
+    log(message,
+        level: LogLevel.fatal,
+        exception: exception,
+        eventProperties: eventProperties);
   }
 
   @override
-  void info(message, {Exception? exception, Map<String, dynamic>? eventProperties}) {
-    log(message, level: LogLevel.info, exception: exception, eventProperties: eventProperties);
+  void info(message,
+      {Exception? exception, Map<String, dynamic>? eventProperties}) {
+    log(message,
+        level: LogLevel.info,
+        exception: exception,
+        eventProperties: eventProperties);
   }
 
   @override
-  void trace(message, {Exception? exception, Map<String, dynamic>? eventProperties}) {
-    log(message, level: LogLevel.trace, exception: exception, eventProperties: eventProperties);
+  void trace(message,
+      {Exception? exception, Map<String, dynamic>? eventProperties}) {
+    log(message,
+        level: LogLevel.trace,
+        exception: exception,
+        eventProperties: eventProperties);
   }
 
   @override
-  void warn(message, {Exception? exception, Map<String, dynamic>? eventProperties}) {
-    log(message, level: LogLevel.warn, exception: exception, eventProperties: eventProperties);
+  void warn(message,
+      {Exception? exception, Map<String, dynamic>? eventProperties}) {
+    log(message,
+        level: LogLevel.warn,
+        exception: exception,
+        eventProperties: eventProperties);
   }
 
   @override
-  void log(message, {required LogLevel level, Exception? exception, Map<String, dynamic>? eventProperties}) {
+  void log(message,
+      {required LogLevel level,
+      Exception? exception,
+      Map<String, dynamic>? eventProperties}) {
     print('${DateTime.now()} [$level] $message |$exception|$eventProperties');
   }
 }

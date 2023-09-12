@@ -15,5 +15,6 @@ abstract class ISuppress {
 
   /// Runs the provided async function and returns its result. If the task does not run to completion, an exception is logged at `Error` level.
   /// The exception is not propagated outside of this method; a fallback value is returned instead.
-  Future<T?> swallowResultAsync<T>(Future<T?> Function() action, T? fallbackValue);
+  Future<T?> swallowResultAsync<T>(
+      Future<T?> Function() action, T? fallbackValue);
 }

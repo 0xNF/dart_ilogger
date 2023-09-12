@@ -7,7 +7,8 @@ class LogLevel {
 
   LogLevel({required this.name, required this.ordinal}) {
     if (_values.any((e) => e.ordinal == ordinal)) {
-      throw Exception("A log level was created with the same `ordinal` as one that already exists. Please ensure these ordinals are unique");
+      throw Exception(
+          "A log level was created with the same `ordinal` as one that already exists. Please ensure these ordinals are unique");
     }
     _values.add(this);
   }
@@ -55,14 +56,20 @@ class LogLevel {
   }
 
   static LogLevel get minLevel {
-    _minLevel ??= _values.fold(fatal, (previousValue, element) => previousValue!.ordinal < element.ordinal ? previousValue : element);
+    _minLevel ??= _values.fold(
+        fatal,
+        (previousValue, element) =>
+            previousValue!.ordinal < element.ordinal ? previousValue : element);
     return _minLevel!;
   }
 
   static LogLevel? _minLevel;
 
   static LogLevel get maxLevel {
-    _maxLevel ??= _values.fold(fatal, (previousValue, element) => previousValue!.ordinal > element.ordinal ? previousValue : element);
+    _maxLevel ??= _values.fold(
+        fatal,
+        (previousValue, element) =>
+            previousValue!.ordinal > element.ordinal ? previousValue : element);
     return _maxLevel!;
   }
 

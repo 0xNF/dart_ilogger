@@ -27,25 +27,34 @@ abstract class ILogger implements ISuppress {
   bool isEnabled(LogLevel level);
 
   /// Writes a diagnostic message at the given [LogLevel] level
-  void log(dynamic message, {required LogLevel level, Exception? exception, Map<String, dynamic>? eventProperties});
+  void log(dynamic message,
+      {required LogLevel level,
+      Exception? exception,
+      Map<String, dynamic>? eventProperties});
 
   /// Writes a diagnostic message at the [LogLevel.trace] levels
-  void trace(dynamic message, {Exception? exception, Map<String, dynamic>? eventProperties});
+  void trace(dynamic message,
+      {Exception? exception, Map<String, dynamic>? eventProperties});
 
   /// Writes a diagnostic message at the [LogLevel.debug] level
-  void debug(dynamic message, {Exception? exception, Map<String, dynamic>? eventProperties});
+  void debug(dynamic message,
+      {Exception? exception, Map<String, dynamic>? eventProperties});
 
   /// Writes a diagnostic message at the [LogLevel.info] level
-  void info(dynamic message, {Exception? exception, Map<String, dynamic>? eventProperties});
+  void info(dynamic message,
+      {Exception? exception, Map<String, dynamic>? eventProperties});
 
   /// Writes a diagnostic message at the [LogLevel.warn] level
-  void warn(dynamic message, {Exception? exception, Map<String, dynamic>? eventProperties});
+  void warn(dynamic message,
+      {Exception? exception, Map<String, dynamic>? eventProperties});
 
   /// Writes a diagnostic message at the [LogLevel.error] level
-  void error(dynamic message, {Exception? exception, Map<String, dynamic>? eventProperties});
+  void error(dynamic message,
+      {Exception? exception, Map<String, dynamic>? eventProperties});
 
   /// Writes a diagnostic message at the [LogLevel.fatal] level
-  void fatal(dynamic message, {Exception? exception, Map<String, dynamic>? eventProperties});
+  void fatal(dynamic message,
+      {Exception? exception, Map<String, dynamic>? eventProperties});
 
   /// Runs action.
   ///
@@ -77,7 +86,8 @@ abstract class ILogger implements ISuppress {
   ///
   /// Fallback value is returned instead.
   @override
-  Future<T?> swallowResultAsync<T>(Future<T?> Function() action, T? fallbackValue) async {
+  Future<T?> swallowResultAsync<T>(
+      Future<T?> Function() action, T? fallbackValue) async {
     return null;
   }
 }
@@ -90,23 +100,39 @@ final class BasicConsoleLogger extends ILogger {
   final String _name;
 
   @override
-  void debug(message, {Exception? exception, Map<String, dynamic>? eventProperties}) {
-    log(message, level: LogLevel.debug, exception: exception, eventProperties: eventProperties);
+  void debug(message,
+      {Exception? exception, Map<String, dynamic>? eventProperties}) {
+    log(message,
+        level: LogLevel.debug,
+        exception: exception,
+        eventProperties: eventProperties);
   }
 
   @override
-  void error(message, {Exception? exception, Map<String, dynamic>? eventProperties}) {
-    log(message, level: LogLevel.error, exception: exception, eventProperties: eventProperties);
+  void error(message,
+      {Exception? exception, Map<String, dynamic>? eventProperties}) {
+    log(message,
+        level: LogLevel.error,
+        exception: exception,
+        eventProperties: eventProperties);
   }
 
   @override
-  void fatal(message, {Exception? exception, Map<String, dynamic>? eventProperties}) {
-    log(message, level: LogLevel.fatal, exception: exception, eventProperties: eventProperties);
+  void fatal(message,
+      {Exception? exception, Map<String, dynamic>? eventProperties}) {
+    log(message,
+        level: LogLevel.fatal,
+        exception: exception,
+        eventProperties: eventProperties);
   }
 
   @override
-  void info(message, {Exception? exception, Map<String, dynamic>? eventProperties}) {
-    log(message, level: LogLevel.info, exception: exception, eventProperties: eventProperties);
+  void info(message,
+      {Exception? exception, Map<String, dynamic>? eventProperties}) {
+    log(message,
+        level: LogLevel.info,
+        exception: exception,
+        eventProperties: eventProperties);
   }
 
   @override
@@ -128,18 +154,29 @@ final class BasicConsoleLogger extends ILogger {
   bool get isWarnEnabled => true;
 
   @override
-  void log(message, {required LogLevel level, Exception? exception, Map<String, dynamic>? eventProperties}) {
+  void log(message,
+      {required LogLevel level,
+      Exception? exception,
+      Map<String, dynamic>? eventProperties}) {
     print('${DateTime.now()} [$level] $message |$exception|$eventProperties');
   }
 
   @override
-  void trace(message, {Exception? exception, Map<String, dynamic>? eventProperties}) {
-    log(message, level: LogLevel.trace, exception: exception, eventProperties: eventProperties);
+  void trace(message,
+      {Exception? exception, Map<String, dynamic>? eventProperties}) {
+    log(message,
+        level: LogLevel.trace,
+        exception: exception,
+        eventProperties: eventProperties);
   }
 
   @override
-  void warn(message, {Exception? exception, Map<String, dynamic>? eventProperties}) {
-    log(message, level: LogLevel.warn, exception: exception, eventProperties: eventProperties);
+  void warn(message,
+      {Exception? exception, Map<String, dynamic>? eventProperties}) {
+    log(message,
+        level: LogLevel.warn,
+        exception: exception,
+        eventProperties: eventProperties);
   }
 }
 
@@ -151,16 +188,20 @@ final class BasicNullLogger extends ILogger {
   final String _name;
 
   @override
-  void debug(message, {Exception? exception, Map<String, dynamic>? eventProperties}) {}
+  void debug(message,
+      {Exception? exception, Map<String, dynamic>? eventProperties}) {}
 
   @override
-  void error(message, {Exception? exception, Map<String, dynamic>? eventProperties}) {}
+  void error(message,
+      {Exception? exception, Map<String, dynamic>? eventProperties}) {}
 
   @override
-  void fatal(message, {Exception? exception, Map<String, dynamic>? eventProperties}) {}
+  void fatal(message,
+      {Exception? exception, Map<String, dynamic>? eventProperties}) {}
 
   @override
-  void info(message, {Exception? exception, Map<String, dynamic>? eventProperties}) {}
+  void info(message,
+      {Exception? exception, Map<String, dynamic>? eventProperties}) {}
 
   @override
   bool get isDebugEnabled => true;
@@ -181,11 +222,16 @@ final class BasicNullLogger extends ILogger {
   bool get isWarnEnabled => true;
 
   @override
-  void log(message, {required LogLevel level, Exception? exception, Map<String, dynamic>? eventProperties}) {}
+  void log(message,
+      {required LogLevel level,
+      Exception? exception,
+      Map<String, dynamic>? eventProperties}) {}
 
   @override
-  void trace(message, {Exception? exception, Map<String, dynamic>? eventProperties}) {}
+  void trace(message,
+      {Exception? exception, Map<String, dynamic>? eventProperties}) {}
 
   @override
-  void warn(message, {Exception? exception, Map<String, dynamic>? eventProperties}) {}
+  void warn(message,
+      {Exception? exception, Map<String, dynamic>? eventProperties}) {}
 }
