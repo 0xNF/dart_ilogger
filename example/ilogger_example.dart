@@ -20,6 +20,9 @@ final class SampleLogger extends ILogger {
   bool get isWarnEnabled => true;
 
   @override
+  bool isEnabled(LogLevel level) => true;
+
+  @override
   void debug(message, {Exception? exception, Map<String, dynamic>? eventProperties}) {
     log(message, level: LogLevel.debug, exception: exception, eventProperties: eventProperties);
   }

@@ -9,6 +9,9 @@ abstract class ILogger implements ISuppress {
   bool get isErrorEnabled;
   bool get isFatalEnabled;
 
+  /// Checks whether this logger is enabled for a given [LogLevel]
+  bool isEnabled(LogLevel level);
+
   /// Writes a diagnostic message at the given [LogLevel] level
   void log(dynamic message, {required LogLevel level, Exception? exception, Map<String, dynamic>? eventProperties});
 
