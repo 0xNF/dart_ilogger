@@ -2,6 +2,9 @@ import 'package:ilogger/ilogger.dart';
 
 final class SampleLogger extends ILogger {
   @override
+  String get name => "sample";
+
+  @override
   bool get isDebugEnabled => true;
 
   @override

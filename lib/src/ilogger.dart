@@ -2,11 +2,25 @@ import 'package:ilogger/src/isuppress.dart';
 import 'package:ilogger/src/log_level.dart';
 
 abstract class ILogger implements ISuppress {
+  /// Name of this logger
+  String get name;
+
+  /// Whether log events at the [LogLevel.trace] level will be logged
   bool get isTraceEnabled;
+
+  /// Whether log events at the [LogLevel.debug] level will be logged
   bool get isDebugEnabled;
+
+  /// Whether log events at the [LogLevel.info] level will be logged
   bool get isInfoEnabled;
+
+  /// Whether log events at the [LogLevel.warn] level will be logged
   bool get isWarnEnabled;
+
+  /// Whether log events at the [LogLevel.error] level will be logged
   bool get isErrorEnabled;
+
+  /// Whether log events at the [LogLevel.fatal] level will be logged
   bool get isFatalEnabled;
 
   /// Checks whether this logger is enabled for a given [LogLevel
