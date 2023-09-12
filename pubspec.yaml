@@ -1,16 +1,17 @@
-name: dart_ilogger
-description: A plug-in based logging interface. This package is not intended to be used for conrete logging purposes, it is primarily for the interfaces. It provides only an extremely basic implementation of a real logger.
+name: ilogger
+description: Common interfaces that support building generic logging implementations
 version: 1.0.0
-publish_to: none #todo(nf): remove eventually
-homepage: https://github.com/0xnf/dart_ilogger
+repository: https://github.com/0xNF/ilogger
+homepage: https://github.com/0xNF/ilogger
 
 environment:
-  sdk: ">=3.0.0 <4.0.0"
+  sdk: ^3.1.1
 
-# dependencies:
-#   path: ^1.8.0
+# Add regular dependencies here.
+dependencies:
+  collection: ^1.18.0
+  # path: ^1.8.0
 
 dev_dependencies:
   lints: ^2.0.0
-  test: ^1.16.0
-dependencies: { build_runner: ^2.2.0, json_serializable: ^6.3.1 , path: ^1.8.3}
+  test: ^1.21.0
